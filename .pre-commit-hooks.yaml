@@ -1,0 +1,9 @@
+- id: check-config
+  stages: [commit]
+  name: Check alert manager config files
+  description: Check alert manager config files
+  language: docker_image
+  entry: --entrypoint /bin/amtool prom/alertmanager:latest
+  files: ^$
+  args:
+  - check-config
